@@ -1,6 +1,8 @@
 # Init workspace
 
 ## Linux
+*In progess...*
+
 ## MacOS
 ```bash
 git clone git@github.com:Luchanso/init-workspace.git
@@ -13,4 +15,3 @@ chmod a+x init.sh
 # TODO
 * [ ] Change emails and scripts in script
 * [ ] Add ssh to remote repositories `cat ~/.ssh/id_rsa.pub`
-* [ ]
