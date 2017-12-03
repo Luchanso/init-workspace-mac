@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+read -p "Enter your name: " username
+read -p "Enter your email: " email
+
 open https://www.google.com/chrome/browser/desktop/index.html
 open https://code.visualstudio.com/
 
@@ -7,8 +10,8 @@ open https://code.visualstudio.com/
 brew doctor
 brew install git
 
-git config --global user.email "luchansodev@gmail.com"
-git config --global user.name "Luchansky Oleg"
+git config --global user.email "$email"
+git config --global user.name "$username"
 
 brew install node
 brew install yarn
@@ -18,9 +21,8 @@ npm --version
 yarn --version
 
 echo "Generate ssh key..."
-ssh-keygen -t rsa -b 4096 -C "luchansodev@gmail.com"
+ssh-keygen -t rsa -b 4096 -C "$email"
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 
 echo DONE.
