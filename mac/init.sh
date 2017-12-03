@@ -7,10 +7,7 @@ open https://code.visualstudio.com/
 brew doctor
 brew install git
 
-echo "git config --global user.email "email@example.com""
-echo "git config --global user.name "Luchansky Oleg""
-
-git config --global user.email "email@example.com"
+git config --global user.email "luchansodev@gmail.com"
 git config --global user.name "Luchansky Oleg"
 
 brew install node
@@ -21,6 +18,9 @@ npm --version
 yarn --version
 
 echo "Generate ssh key..."
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+ssh-keygen -t rsa -b 4096 -C "luchansodev@gmail.com"
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 
 echo DONE.
