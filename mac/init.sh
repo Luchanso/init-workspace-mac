@@ -15,6 +15,7 @@ git config --global user.name "$username"
 
 brew install node
 brew install yarn
+brew cask install github
 npm install -g node-gyp n eslint create-react-app http-server eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb
 node --version
 npm --version
