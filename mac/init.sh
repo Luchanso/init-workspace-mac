@@ -20,6 +20,7 @@ brew cask install visual-studio-code
 brew cask install slack
 brew cask install telegram
 brew cask install figma
+brew cask install alfred
 
 npm install -g node-gyp n eslint create-react-app http-server eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb
 node --version
@@ -35,5 +36,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 echo "----------------------------------------";
 cat ~/.ssh/id_rsa.pub
 echo "----------------------------------------";
+
+echo "Checklist:"
+echo "- setup keyboard typing speed"
+echo "- setup dock"
 
 echo DONE.
