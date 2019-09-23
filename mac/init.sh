@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 read -p "Enter your name: " username
 read -p "Enter your email: " email
@@ -30,5 +31,9 @@ echo "Generate ssh key..."
 ssh-keygen -t rsa -b 4096 -C "$email"
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo "----------------------------------------";
+cat ~/.ssh/id_rsa.pub
+echo "----------------------------------------";
 
 echo DONE.
