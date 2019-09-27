@@ -16,18 +16,25 @@ brew install yarn
 brew install m-cli
 
 brew cask install google-chrome
+
+# vscode
 brew cask install visual-studio-code
+ln -s /usr/local/bin/code /Applications/Visual Studio Code.app/Contents/Resources/app/bin/code
+git config --global core.editor "code"
+
 brew cask install slack
 brew cask install telegram
 brew cask install figma
 brew cask install alfred
 
+# nodejs
 npm install -g node-gyp n eslint create-react-app http-server eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb
 node --version
 npm --version
 yarn --version
 npm i -g n
 
+# ssh
 echo "Generate ssh key..."
 ssh-keygen -t rsa -b 4096 -C "$email"
 
@@ -39,6 +46,6 @@ echo "----------------------------------------";
 
 echo "Checklist:"
 echo "- setup keyboard typing speed"
-echo "- setup dock"
+echo "- clean dock"
 
 echo DONE.
