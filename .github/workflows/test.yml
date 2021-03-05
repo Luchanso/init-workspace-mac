@@ -1,0 +1,17 @@
+name: Test macos script
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - run: sh -c "$(curl -fsSL https://raw.githubusercontent.com/luchanso/init-workspace/master/mac/init.sh)"
