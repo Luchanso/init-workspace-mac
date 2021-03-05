@@ -1,38 +1,97 @@
 #!/usr/bin/env bash
 set -e
 
+sudo -v
 read -p "Enter your name: " username
 read -p "Enter your email: " email
 
+###############################################################################
+# Keyboard                                                                    #
+###############################################################################
+echo "Setting up Keyboard"
+
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain KeyRepeat -int 1
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
+echo "Setting up Dock"
+
+# Remove the auto-hiding Dock delay
+defaults write com.apple.dock autohide-delay -float 0
+
+# Remove the animation when hiding/showing the Dock
+defaults write com.apple.dock autohide-time-modifier -float 0
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Make Dock icons of hidden applications translucent
+defaults write com.apple.dock showhidden -bool true
+
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
+
+###############################################################################
+# Screen                                                                      #
+###############################################################################
+echo "Setting up Screen"
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+###############################################################################
+# Terminal                                                                    #
+###############################################################################
+echo "Setting up Terminal"
+
+# Enable Secure Keyboard Entry in Terminal.app
+# See: https://security.stackexchange.com/a/47786/8918
+defaults write com.apple.terminal SecureKeyboardEntry -bool true
+
+###############################################################################
+# Brew                                                                        #
+###############################################################################
+echo "Setting up Brew and applications"
+
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew doctor
-brew install git
+brew install git docker
 
 git config --global user.email "$email"
 git config --global user.name "$username"
 
-brew install node
-brew install yarn
-brew install m-cli
-
-brew cask install google-chrome
+# --- js ---
+brew install node yarn m-cli
 
 # vscode
-brew cask install visual-studio-code
+brew install --cask visual-studio-code
 ln -s /usr/local/bin/code /Applications/Visual Studio Code.app/Contents/Resources/app/bin/code
 git config --global core.editor "code"
 
-brew cask install slack
-brew cask install telegram
-brew cask install figma
-brew cask install alfred
+brew install --cask
+    \ google-chrome
+    \ opera
+    \ slack
+    \ telegram
+    \ notion
+    \ figma
+    \ alfred
+    \ zoom
+    \ flux
+    \ kap
+    \ spotify
+    \ vlc
+    \ docker
+    \ postman
 
 # nodejs
-npm install -g node-gyp n eslint create-react-app http-server eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb
+npm i -g node-gyp n eslint create-react-app http-server eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb
 node --version
 npm --version
 yarn --version
-npm i -g n
 
 # ssh
 echo "Generate ssh key..."
@@ -48,4 +107,4 @@ echo "Checklist:"
 echo "- setup keyboard typing speed"
 echo "- clean dock"
 
-echo DONE.
+echo "Done. Note that some of these changes require a logout/restart to take effect."
