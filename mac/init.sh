@@ -62,7 +62,7 @@ defaults write com.apple.terminal SecureKeyboardEntry -bool true
 ###############################################################################
 echo "Setting up Brew and applications"
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew doctor
 brew install git docker
 
@@ -79,6 +79,7 @@ git config --global core.editor "code"
 # sync settings extenstion installation
 code --install-extension shan.code-settings-sync
 
+if [[ -z "${CI}" ]]; then
 brew install --cask
     \ google-chrome
     \ opera
@@ -94,6 +95,7 @@ brew install --cask
     \ vlc
     \ docker
     \ postman
+fi
 
 brew cleanup
 
