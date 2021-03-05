@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
+if [[ -z "${CI}" ]]; then
 sudo -v
+
 read -p "Enter your name: " username
 read -p "Enter your email: " email
+else
+username="test"
+email="test@test.com"
+fi
 
 ###############################################################################
 # Keyboard                                                                    #
