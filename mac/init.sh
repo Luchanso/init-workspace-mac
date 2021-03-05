@@ -70,6 +70,8 @@ brew install node yarn m-cli
 brew install --cask visual-studio-code
 ln -s /usr/local/bin/code /Applications/Visual Studio Code.app/Contents/Resources/app/bin/code
 git config --global core.editor "code"
+# sync settings extenstion installation
+code --install-extension shan.code-settings-sync
 
 brew install --cask
     \ google-chrome
@@ -106,5 +108,7 @@ echo "----------------------------------------";
 echo "Checklist:"
 echo "- setup keyboard typing speed"
 echo "- clean dock"
+echo "- download all settings for VSCode via Sync Settings"
+echo "- wallpapers https://apps.apple.com/us/app/unsplash-wallpapers/id1284863847"
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
