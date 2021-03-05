@@ -89,6 +89,8 @@ brew install --cask
     \ docker
     \ postman
 
+brew cleanup
+
 # nodejs
 npm i -g node-gyp n eslint create-react-app http-server eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb
 node --version
