@@ -96,6 +96,7 @@ brew install --cask
     \ vlc
     \ docker
     \ postman
+    \ aerial
 
 brew cleanup
 
