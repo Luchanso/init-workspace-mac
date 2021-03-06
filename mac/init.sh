@@ -81,7 +81,6 @@ git config --global core.editor "code"
 # sync settings extenstion installation
 code --install-extension shan.code-settings-sync
 
-if [[ -z "${CI}" ]]; then
 brew install --cask
     \ google-chrome
     \ opera
@@ -99,8 +98,6 @@ brew install --cask
     \ postman
 
 brew cleanup
-fi
-
 
 # nodejs
 npm i -g node-gyp n eslint create-react-app http-server eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb
