@@ -64,9 +64,9 @@ echo "Setting up Brew and applications"
 
 if [[ -z "${CI}" ]]; then
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew doctor
 fi
 
-brew doctor
 brew install git docker
 
 git config --global user.email "$email"
@@ -100,9 +100,10 @@ brew install --cask
     \ vlc
     \ docker
     \ postman
-fi
 
 brew cleanup
+fi
+
 
 # nodejs
 npm i -g node-gyp n eslint create-react-app http-server eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb
