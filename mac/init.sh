@@ -113,7 +113,7 @@ yarn --version
 
 # ssh
 echo "Generate ssh key..."
-ssh-keygen -t rsa -b 4096 -C "$email"
+ssh-keygen -t rsa -b 4096 -C "$email" -N '' -f ~/.ssh/id_rsa -v
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
