@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - run: sh -c "$(curl -fsSL https://raw.githubusercontent.com/luchanso/init-workspace/master/mac/init.sh)"
+    - run: ./mac/init.sh

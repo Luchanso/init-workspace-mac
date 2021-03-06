@@ -77,7 +77,6 @@ brew install node yarn m-cli
 
 # vscode
 brew install --cask visual-studio-code
-ln -s /usr/local/bin/code /Applications/Visual Studio Code.app/Contents/Resources/app/bin/code
 git config --global core.editor "code"
 # sync settings extenstion installation
 code --install-extension shan.code-settings-sync
