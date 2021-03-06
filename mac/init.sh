@@ -76,13 +76,11 @@ git config --global user.name "$username"
 brew install node yarn m-cli
 
 # vscode
-if [[ -z "${CI}" ]]; then
 brew install --cask visual-studio-code
 ln -s /usr/local/bin/code /Applications/Visual Studio Code.app/Contents/Resources/app/bin/code
 git config --global core.editor "code"
 # sync settings extenstion installation
 code --install-extension shan.code-settings-sync
-fi
 
 if [[ -z "${CI}" ]]; then
 brew install --cask
