@@ -96,7 +96,7 @@ brew install --cask
     \ vlc
     \ docker
     \ postman
-    \ aerial
+    # \ aerial
 
 if [[ -z "${CI}" ]]; then
 brew cleanup
