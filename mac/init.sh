@@ -98,9 +98,6 @@ brew install cask
     \ docker
     \ postman
     \ aerial
-fi
-
-if [[ -z "${CI}" ]]; then
 brew cleanup
 fi
 
