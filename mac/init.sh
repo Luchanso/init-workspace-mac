@@ -81,7 +81,7 @@ git config --global core.editor "code"
 # sync settings extenstion installation
 code --install-extension shan.code-settings-sync
 
-brew install --cask
+brew install cask
     \ google-chrome
     \ opera
     \ slack
@@ -96,7 +96,7 @@ brew install --cask
     \ vlc
     \ docker
     \ postman
-    # \ aerial
+    \ aerial
 
 if [[ -z "${CI}" ]]; then
 brew cleanup
