@@ -81,23 +81,23 @@ git config --global core.editor "code"
 # sync settings extenstion installation
 code --install-extension shan.code-settings-sync
 
+brew install --cask google-chrome
+brew install --cask opera
+brew install --cask slack
+brew install --cask telegram
+brew install --cask notion
+brew install --cask figma
+brew install --cask alfred
+brew install --cask zoom
+brew install --cask flux
+brew install --cask kap
+brew install --cask spotify
+brew install --cask vlc
+brew install --cask docker
+brew install --cask postman
+brew install --cask aerial
+brew install --cask rectangle
 if [[ -z "${CI}" ]]; then
-brew install cask
-    \ google-chrome
-    \ opera
-    \ slack
-    \ telegram
-    \ notion
-    \ figma
-    \ alfred
-    \ zoom
-    \ flux
-    \ kap
-    \ spotify
-    \ vlc
-    \ docker
-    \ postman
-    \ aerial
 brew cleanup
 fi
 
