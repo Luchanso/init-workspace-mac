@@ -94,7 +94,8 @@ brew install --cask kap
 brew install --cask spotify
 brew install --cask vlc
 brew install --cask docker
-brew install --cask postman
+# Not work
+# brew install --cask postman
 brew install --cask aerial
 brew install --cask rectangle
 if [[ -z "${CI}" ]]; then
