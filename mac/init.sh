@@ -73,7 +73,7 @@ git config --global user.email "$email"
 git config --global user.name "$username"
 
 # --- js ---
-brew install node yarn m-cli thefuck
+brew install node yarn m-cli thefuck gnupg gnupg2
 
 # vscode
 brew install --cask visual-studio-code
