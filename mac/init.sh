@@ -78,26 +78,21 @@ brew install node yarn m-cli thefuck gnupg gnupg2
 # vscode
 brew install --cask visual-studio-code
 git config --global core.editor "code"
-# sync settings extenstion installation
-code --install-extension shan.code-settings-sync
 
 brew install --cask google-chrome
-brew install --cask opera
 brew install --cask slack
 brew install --cask telegram
 brew install --cask notion
 brew install --cask figma
-brew install --cask alfred
+brew install --cask raycast
 brew install --cask zoom
 brew install --cask flux
 brew install --cask kap
 brew install --cask spotify
 brew install --cask vlc
 brew install --cask docker
-# Not work
-# brew install --cask postman
+brew install openvpn
 brew install --cask aerial
-brew install --cask rectangle
 if [[ -z "${CI}" ]]; then
 brew cleanup
 fi
@@ -110,12 +105,12 @@ yarn --version
 
 # ssh
 echo "Generate ssh key..."
-ssh-keygen -t rsa -b 4096 -C "$email" -N '' -f ~/.ssh/id_rsa -v
+ssh-keygen -t ed25519 -C "$email" -N '' -f ~/.ssh/id_ed25519 -v
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo "----------------------------------------";
-cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_ed25519.pub
 echo "----------------------------------------";
 
 echo "Checklist:"
