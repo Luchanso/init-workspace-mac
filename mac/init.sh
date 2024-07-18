@@ -67,7 +67,7 @@ if [[ -z "${CI}" ]]; then
 brew doctor
 fi
 
-brew install git docker
+brew install git
 
 git config --global user.email "$email"
 git config --global user.name "$username"
