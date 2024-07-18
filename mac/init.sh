@@ -73,7 +73,7 @@ git config --global user.email "$email"
 git config --global user.name "$username"
 
 # --- js ---
-brew install node yarn m-cli thefuck gnupg gnupg2
+brew install node yarn m-cli thefuck gnupg gnupg2 oven-sh/bun/bun
 
 # vscode
 brew install --cask visual-studio-code
@@ -88,10 +88,10 @@ brew install --cask raycast
 brew install --cask zoom
 brew install --cask flux
 brew install --cask kap
-brew install --cask spotify
+# brew install --cask spotify
 brew install --cask vlc
 brew install --cask docker
-brew install openvpn
+# brew install openvpn
 brew install --cask aerial
 if [[ -z "${CI}" ]]; then
 brew cleanup
@@ -102,6 +102,7 @@ npm i -g node-gyp n eslint create-react-app http-server eslint-plugin-react esli
 node --version
 npm --version
 yarn --version
+bun --version
 
 # ssh
 echo "Generate ssh key..."
@@ -116,7 +117,7 @@ echo "----------------------------------------";
 echo "Checklist:"
 echo "- setup keyboard typing speed"
 echo "- clean dock"
-echo "- download all settings for VSCode via Sync Settings"
+echo "- sync all settings for VSCode"
 echo "- wallpapers https://apps.apple.com/us/app/unsplash-wallpapers/id1284863847"
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
