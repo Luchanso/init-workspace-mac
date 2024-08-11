@@ -3,63 +3,9 @@ set -e
 
 if [[ -z "${CI}" ]]; then
 sudo -v
-
-read -p "Enter your name: " username
-read -p "Enter your email: " email
 else
-username="test"
-email="test@test.com"
 fi
 
-###############################################################################
-# Keyboard                                                                    #
-###############################################################################
-echo "Setting up Keyboard"
-
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
-defaults write NSGlobalDomain KeyRepeat -int 1
-
-###############################################################################
-# Dock                                                                        #
-###############################################################################
-echo "Setting up Dock"
-
-# Remove the auto-hiding Dock delay
-defaults write com.apple.dock autohide-delay -float 0
-
-# Remove the animation when hiding/showing the Dock
-defaults write com.apple.dock autohide-time-modifier -float 0
-
-# Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
-
-# Make Dock icons of hidden applications translucent
-defaults write com.apple.dock showhidden -bool true
-
-# Don’t show recent applications in Dock
-defaults write com.apple.dock show-recents -bool false
-
-###############################################################################
-# Screen                                                                      #
-###############################################################################
-echo "Setting up Screen"
-
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-###############################################################################
-# Terminal                                                                    #
-###############################################################################
-echo "Setting up Terminal"
-
-# Enable Secure Keyboard Entry in Terminal.app
-# See: https://security.stackexchange.com/a/47786/8918
-defaults write com.apple.terminal SecureKeyboardEntry -bool true
-
-###############################################################################
-# Brew                                                                        #
-###############################################################################
 echo "Setting up Brew and applications"
 
 if [[ -z "${CI}" ]]; then
@@ -69,9 +15,6 @@ fi
 
 brew install git
 
-git config --global user.email "$email"
-git config --global user.name "$username"
-
 # --- js ---
 brew install node yarn m-cli thefuck gnupg gnupg2 oven-sh/bun/bun
 
@@ -80,7 +23,6 @@ brew install --cask visual-studio-code
 git config --global core.editor "code"
 
 brew install --cask google-chrome
-brew install --cask slack
 brew install --cask telegram
 brew install --cask notion
 brew install --cask figma
@@ -88,21 +30,30 @@ brew install --cask raycast
 brew install --cask zoom
 brew install --cask flux
 brew install --cask kap
-# brew install --cask spotify
 brew install --cask vlc
 brew install --cask docker
-# brew install openvpn
-brew install --cask aerial
+
 if [[ -z "${CI}" ]]; then
 brew cleanup
 fi
 
 # nodejs
-npm i -g node-gyp n eslint create-react-app http-server eslint-plugin-react eslint-plugin-jsx-a11y eslint-plugin-import eslint-config-airbnb
 node --version
 npm --version
 yarn --version
 bun --version
+
+
+if [[ -z "${CI}" ]]; then
+read -p "Enter your name: " username
+read -p "Enter your email: " email
+else
+username="test"
+email="test@test.com"
+fi
+
+git config --global user.email "$email"
+git config --global user.name "$username"
 
 # ssh
 echo "Generate ssh key..."
