@@ -32,6 +32,7 @@ brew install --cask flux
 brew install --cask kap
 brew install --cask vlc
 brew install --cask docker
+brew install dive
 
 if [[ -z "${CI}" ]]; then
 brew cleanup
