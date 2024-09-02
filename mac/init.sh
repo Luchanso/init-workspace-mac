@@ -3,7 +3,6 @@ set -e
 
 if [[ -z "${CI}" ]]; then
 sudo -v
-else
 fi
 
 echo "Setting up Brew and applications"
