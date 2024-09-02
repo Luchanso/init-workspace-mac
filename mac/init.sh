@@ -15,7 +15,7 @@ fi
 brew install git
 
 # --- js ---
-brew install node yarn m-cli thefuck gnupg gnupg2 oven-sh/bun/bun
+brew install node m-cli thefuck gnupg gnupg2 oven-sh/bun/bun
 
 # vscode
 brew install --cask visual-studio-code
@@ -41,7 +41,6 @@ fi
 # nodejs
 node --version
 npm --version
-yarn --version
 bun --version
 
 
